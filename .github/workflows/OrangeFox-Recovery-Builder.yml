@@ -59,6 +59,8 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      ALLOW_MISSING_DEPENDENCIES: "true"
+      OF_ALLOW_DISABLE_VERSION_CHECK: "1"
     permissions:
       contents: write
     steps:
