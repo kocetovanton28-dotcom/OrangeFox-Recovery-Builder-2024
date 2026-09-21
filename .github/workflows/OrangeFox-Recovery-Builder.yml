@@ -61,6 +61,7 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       ALLOW_MISSING_DEPENDENCIES: "true"
       OF_ALLOW_DISABLE_VERSION_CHECK: "1"
+      CUSTOM_LUNCH: "true"
     permissions:
       contents: write
     steps:
