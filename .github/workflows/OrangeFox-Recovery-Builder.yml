@@ -110,7 +110,6 @@ jobs:
         git clone ${{ github.event.inputs.DEVICE_TREE }} -b ${{ github.event.inputs.DEVICE_TREE_BRANCH }} ./${{ github.event.inputs.DEVICE_PATH }}
         cd ${{ github.event.inputs.DEVICE_PATH }}
         echo "COMMIT_ID=$(git rev-parse HEAD)" >> $GITHUB_ENV
-
       - name: Building OrangeFox
     run: |
       cd ${GITHUB_WORKSPACE}/OrangeFox/fox_${{ github.event.inputs.MANIFEST_BRANCH }}
@@ -121,8 +120,6 @@ jobs:
       lunch omni_RE6402L1-qcom_qssi-userdebug
       make clean
       mka ${{ github.event.inputs.BUILD_TARGET }}image
-
-
     - name: Set Build Date # Output will be use in Release
       run: |
         echo "BUILD_DATE=$(date +%Y%m%d)" >> $GITHUB_ENV
